@@ -2,9 +2,9 @@ package com.example.weathertodayapp.presentation.ui.search
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
-import com.example.weathertodayapp.domain.interactors.use_case.AddLocationUseCase
-import com.example.weathertodayapp.domain.interactors.use_case.SearchCityInfoUseCase
-import com.example.weathertodayapp.domain.interactors.validation.ValidateField
+import com.example.weathertodayapp.domain.use_case.AddLocationUseCase
+import com.example.weathertodayapp.domain.use_case.SearchCityInfoUseCase
+import com.example.weathertodayapp.domain.use_case.ValidateFieldUseCase
 import com.example.weathertodayapp.domain.network.toResourceUiState
 import com.example.weathertodayapp.presentation.model.ResourceUiState
 import com.example.weathertodayapp.presentation.model.TextFieldUiState
@@ -13,7 +13,7 @@ import com.example.weathertodayapp.presentation.mvi.BaseViewModel
 import kotlinx.coroutines.launch
 
 class SearchViewModel(
-    private val validateField: ValidateField,
+    private val validateField: ValidateFieldUseCase,
     private val searchCityInfoUseCase: SearchCityInfoUseCase,
     private val addLocationUseCase: AddLocationUseCase
 ) :

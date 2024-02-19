@@ -1,8 +1,8 @@
 package com.example.weathertodayapp.presentation.ui.locations
 
 import androidx.lifecycle.viewModelScope
-import com.example.weathertodayapp.domain.interactors.use_case.DeleteLocationUseCase
-import com.example.weathertodayapp.domain.interactors.use_case.GetLocationListUseCase
+import com.example.weathertodayapp.domain.use_case.DeleteLocationUseCase
+import com.example.weathertodayapp.domain.use_case.GetLocationListUseCase
 import com.example.weathertodayapp.domain.network.toResourceUiState
 import com.example.weathertodayapp.presentation.model.ResourceUiState
 import com.example.weathertodayapp.presentation.mvi.BaseViewModel

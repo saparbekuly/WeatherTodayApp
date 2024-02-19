@@ -1,11 +1,11 @@
-package com.example.weathertodayapp.domain.interactors.use_case
+package com.example.weathertodayapp.domain.use_case
 
 import com.example.weathertodayapp.domain.model.location.CityItem
 import com.example.weathertodayapp.domain.repository.LocationRepository
 
-class AddLocationUseCase(
+class GetLocationListUseCase(
     private val locationRepository: LocationRepository
 ) {
-    suspend operator fun invoke(cityItem: CityItem) =
-        locationRepository.addLocation(cityItem)
+    suspend operator fun invoke(): List<CityItem> =
+        locationRepository.getLocationList()
 }

@@ -1,4 +1,4 @@
-package com.example.weathertodayapp.domain.interactors.use_case
+package com.example.weathertodayapp.domain.use_case
 
 import com.example.weathertodayapp.domain.model.weather.WeatherInfo
 import com.example.weathertodayapp.domain.network.Response
