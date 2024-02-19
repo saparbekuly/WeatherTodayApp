@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import com.example.weathertodayapp.R
@@ -21,6 +22,7 @@ import org.koin.core.parameter.parametersOf
 
 @Composable
 fun WeatherScreen(
+    navController: NavHostController,
     cityItem: CityItem?,
     weatherViewModel: WeatherViewModel = koinViewModel {
         parametersOf(cityItem)
@@ -30,7 +32,8 @@ fun WeatherScreen(
 
     WeatherContent(
         state = weatherUiState,
-        cityItem
+        cityItem,
+        navController
     )
 }
 
@@ -38,6 +41,7 @@ fun WeatherScreen(
 private fun WeatherContent(
     state: WeatherContract.State,
     cityItem: CityItem?,
+    navController: NavHostController,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -49,7 +53,11 @@ private fun WeatherContent(
         }
     ) {
         CustomTopAppBar(
-            title = stringResource(R.string.weather_today)
+            title = stringResource(R.string.weather_today),
+            navigationIcon = painterResource(id = R.drawable.ic_back),
+            onNavigationClick = {
+                navController.popBackStack()
+            }
         )
         ManagementResourceUiState(
             resourceUiState = state.weatherState,

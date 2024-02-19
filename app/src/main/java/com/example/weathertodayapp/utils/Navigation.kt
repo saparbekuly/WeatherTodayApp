@@ -30,7 +30,7 @@ fun Navigation() {
                 }
             )) {
             val cityItem = it.arguments?.parcelable<CityItem>(CITY_ITEM)
-            WeatherScreen(cityItem = cityItem)
+            WeatherScreen(navController = navController, cityItem = cityItem)
         }
     }
 }
