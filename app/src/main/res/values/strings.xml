@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Weather Today App</string>
+    <string name="city">City</string>
+    <string name="field_is_required">Field is required</string>
+    <string name="enter_city_field">Enter your city</string>
+    <string name="search">Search</string>
+    <string name="search_location">Search Location</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="add_location">Add Location</string>
+    <string name="locations">Locations</string>
+    <string name="weather_today">Weather today</string>
+    <string name="city_name">City: %1$s</string>
+    <string name="weather">Weather: %1$s</string>
+    <string name="weather_description">Weather description: %1$s</string>
+    <string name="temp">Temperature: %1$.2f°C</string>
+    <string name="temp_feels">Temperature feels like: %1$.2f°C</string>
+    <string name="temp_min">Min temperature: %1$.2f°C</string>
+    <string name="temp_max">Max temperature: %1$.2f°C</string>
+    <string name="sea_level">Sea level: %1$s hPa</string>
+    <string name="speed">Wind speed: %1$.2f m/s</string>
+    <string name="clouds">Clouds: %1$d%%</string>
+</resources>
