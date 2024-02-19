@@ -21,7 +21,6 @@ import org.koin.core.parameter.parametersOf
 
 @Composable
 fun WeatherScreen(
-    navController: NavHostController,
     cityItem: CityItem?,
     weatherViewModel: WeatherViewModel = koinViewModel {
         parametersOf(cityItem)
@@ -58,11 +57,6 @@ private fun WeatherContent(
                 WeatherView(weatherInfo = it, cityItem = cityItem)
             },
             loadingView = {
-//                            Column {
-//                                for (i in 1..5) {
-//                                    LocationItemOnLoading()
-//                                }
-//                            }
             },
             onCheckAgain = {},
             onTryAgain = {},
@@ -96,7 +90,5 @@ fun WeatherView(weatherInfo: WeatherInfo, cityItem: CityItem?) {
                 weatherInfo.main?.seaLevel.toString() ?: ""
             )
         )
-//        Text(text = stringResource(R.string.speed, weatherInfo.wind?.speed?.toFloat() ?: 0.0f))
-//        Text(text = stringResource(R.string.clouds, weatherInfo.clouds.toDouble()))
     }
 }

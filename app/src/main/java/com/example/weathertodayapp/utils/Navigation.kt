@@ -10,7 +10,7 @@ import com.example.weathertodayapp.presentation.ui.locations.LocationScreen
 import com.example.weathertodayapp.presentation.ui.search.SearchScreen
 import com.example.weathertodayapp.presentation.ui.weather.WeatherScreen
 import com.example.weathertodayapp.utils.Screen.Companion.CITY_ITEM
-import com.example.weathertodayapp.utils.extension.AssetParamType
+import com.example.weathertodayapp.utils.extension.ParcelableNavType
 import com.example.weathertodayapp.utils.extension.parcelable
 
 @Composable
@@ -26,11 +26,11 @@ fun Navigation() {
         composable("${Screen.WeatherDetail.route}/{$CITY_ITEM}",
             arguments = listOf(
                 navArgument(CITY_ITEM) {
-                    type = AssetParamType()
+                    type = ParcelableNavType(CityItem::class.java)
                 }
             )) {
             val cityItem = it.arguments?.parcelable<CityItem>(CITY_ITEM)
-            WeatherScreen(navController = navController, cityItem = cityItem)
+            WeatherScreen(cityItem = cityItem)
         }
     }
 }

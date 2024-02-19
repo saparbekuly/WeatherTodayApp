@@ -25,7 +25,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavType
 import com.example.weathertodayapp.R
 import com.example.weathertodayapp.data.model.ErrorResponse
-import com.example.weathertodayapp.domain.model.location.CityItem
 import com.example.weathertodayapp.domain.network.Response
 import com.example.weathertodayapp.utils.UiText
 import com.google.gson.Gson
@@ -106,20 +105,24 @@ fun Modifier.shimmerLoadingAnimation(
         )
     }
 }
-
-class AssetParamType : NavType<CityItem>(isNullableAllowed = false) {
-    override fun get(bundle: Bundle, key: String): CityItem? {
+class ParcelableNavType<T : Parcelable>(
+    private val clazz: Class<T>,
+    isNullableAllowed: Boolean = false
+) : NavType<T>(isNullableAllowed) {
+    override fun get(bundle: Bundle, key: String): T? {
         return bundle.getParcelable(key)
     }
 
-    override fun parseValue(value: String): CityItem {
-        return Gson().fromJson(value, CityItem::class.java)
+    override fun parseValue(value: String): T {
+        return Gson().fromJson(value, clazz)
     }
 
-    override fun put(bundle: Bundle, key: String, value: CityItem) {
+    override fun put(bundle: Bundle, key: String, value: T) {
         bundle.putParcelable(key, value)
     }
 }
+
+
 
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
