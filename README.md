@@ -37,4 +37,4 @@ To run this project, ensure you have the latest version of Android Studio and th
 
 ## Contribution
 
-Your contributions are welcome! Please feel free to submit pull requests or open issues to discuss potential improvements or fixes.
+Your contributions are welcome! Please feel free to submit pull requests or open issues to discuss potential improvements or fixes!
